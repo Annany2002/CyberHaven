@@ -14,37 +14,71 @@ This project aims to build an open-source alternative to Vercel, a platform for 
 
 ## Project Structure
 
+```
 cyberhaven/
 ├── packages/
-│   ├── api/               \# Backend API
-│   │   └── src/           \# API source code
-│   ├── cli/               \# Command-line interface
-│   │   └── src/           \# CLI source code
-│   ├── dashboard/        \# Web dashboard (React)
-│   │   └── src/           \# Dashboard source code
-│   └── core/              \# Shared code (utils, types)
-│       └── src/           \# Core source code
+│   ├── api/               # Backend API
+│   │   ├── src/
+│   │   │   ├── controllers/  # API route handlers
+│   │   │   ├── models/      # Database models
+│   │   │   ├── services/     # Business logic
+│   │   │   ├── routes/       # API routes
+│   │   │   ├── middleware/   # Authentication, authorization
+│   │   │   ├── config/       # API configurations
+│   │   │   └── index.js      # API entry point
+│   ├── cli/               # Command-line interface
+│   │   ├── src/
+│   │   │   ├── commands/    # CLI command implementations
+│   │   │   ├── utils/       # Helper functions
+│   │   │   └── index.js      # CLI entry point
+│   ├── dashboard/        # Web dashboard (React)
+│   │   ├── src/
+│   │   │   ├── components/  # UI components
+│   │   │   ├── pages/       # Dashboard pages
+│   │   │   ├── styles/      # CSS or styling files
+│   │   │   └── App.js        # Main application component
+│   └── core/              # Shared code (utils, types)
+│       ├── src/
+│       │   ├── utils/       # Shared utility functions
+│       │   ├── types/       # TypeScript types
+│       │   └── index.js      # Core module entry point
 ├── services/
-│   ├── deployment/       \# Deployment service
-│   │   └── src/           \# Deployment service source code
-│   ├── functions/        \# Serverless function service
-│   │   └── src/           \# Function service source code
-│   └── caching/          \# Caching service
-│       └── src/           \# Caching service source code
-├── infrastructure/      \# Infrastructure as code
-│   └── aws/              \# AWS infrastructure (Terraform)
-├── scripts/              \# Utility scripts
-├── .eslintrc.js          \# ESLint configuration
-├── .prettierrc.js       \# Prettier configuration
-├── tsconfig.json         \# TypeScript configuration
-└── package.json          \# Project metadata and dependencies
+│   ├── deployment/       # Deployment service
+│   │   ├── src/
+│   │   │   ├── deployer.js   # Handles deployment logic
+│   │   │   ├── builder.js    # Handles build processes
+│   │   │   └── index.js      # Deployment service entry point
+│   ├── functions/        # Serverless function service
+│   │   ├── src/
+│   │   │   ├── runtime.js    # Function runtime environment
+│   │   │   ├── manager.js   # Manages function deployments
+│   │   │   └── index.js      # Function service entry point
+│   ├── caching/          # Caching service
+│   │   ├── src/
+│   │   │   ├── cdn.js       # CDN interaction
+│   │   │   ├── cache.js     # Caching logic
+│   │   │   └── index.js      # Caching service entry point
+├── infrastructure/      # Infrastructure as code
+│   ├── aws/              # AWS infrastructure (Terraform)
+│   │   ├── main.tf        # Main Terraform configuration
+│   │   ├── variables.tf   # Terraform variables
+│   │   └── outputs.tf     # Terraform outputs
+├── scripts/              # Utility scripts
+│   ├── deploy.sh         # Deployment script
+│   ├── build.sh          # Build script
+│   └── test.sh           # Test script
+├── .eslintrc.js          # ESLint configuration
+├── .prettierrc.js       # Prettier configuration
+├── tsconfig.json         # TypeScript configuration
+└── package.json          # Project metadata and dependencies
+```
 
 ## Getting Started
 
 **1. Clone the repository:**
 
 ```bash
-git clone url
+git clone https://github.com/Annany2002/CyberHaven.git
 ````
 
 **2. Install dependencies:**
